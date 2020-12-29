@@ -51,7 +51,7 @@ class App extends Component{
               return(
                 <div className="item-wrapper" key={index}>
                   <li>{item}</li>
-                  <button onClick={this.onDelete.bind(this, index)}>X</button>
+                  <button><i onClick={this.onDelete.bind(this, index)} class="fas fa-trash-alt"></i></button>
                 </div>
               )
             })

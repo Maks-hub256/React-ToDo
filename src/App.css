@@ -1,14 +1,18 @@
 .wrapper{
   width: 350px;
-  background: blanchedalmond;
+  background: #fff;
   min-height: 400px;
   margin: 0 auto;
   margin-top: 50px;
-  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 15px; 
+  box-shadow: 0px 0px 20px -1px #ccc;
+}
+
+body{
+  background: #ebf5fb ;
 }
 
 form{
@@ -20,16 +24,16 @@ form{
 input[type="text"] {
   height: 40px;
   border: 0;
-  border-radius: 8px;
   padding-left: 10px;
   font-size: 18px;
+  border: 2px solid #a5cef5;
+  color: #5f6a6a;
 }
 
 input[type="submit"] {
-  border-radius: 8px;
   margin-left: 5px;
   border:0;
-  background: #23e4fa;
+  background: #a5cef5;
   color: #fff;
   font-size: 17px;
 }
@@ -41,6 +45,7 @@ input:focus{
 ul{
   padding: 15px;
   width: 100%;
+  margin-bottom: 0;
 }
 
 li{
@@ -48,10 +53,10 @@ li{
   font-size: 20px;
   overflow-wrap: anywhere;
   width: 285px !important;
+  color: #5f6a6a;
 }
 
 .item-wrapper{
-  border-top: 1px solid #000;
   display: grid;
   grid-template-columns: 6fr 1fr;
   padding: 10px;
@@ -59,11 +64,13 @@ li{
 
 button{
   border: 0;
-  border-radius: 100%;
-  background-color: red;
-  color: #fff;
   font-weight: 800;
-  height: 25px;
-  width: 25px;
   justify-self: flex-end;
+  background-color: initial;
+}
+
+.fas{
+  color:#a5cef5;
+  font-size: 20px;
+  cursor: pointer;
 }
