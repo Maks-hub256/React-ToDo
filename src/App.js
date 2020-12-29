@@ -40,6 +40,8 @@ class App extends Component{
 
   render() {
     return(
+      <>
+      <h1>ToDo List</h1>
       <div className="wrapper">
         <form action="" onSubmit={this.addElem}>
           <input type="text" onChange={this.valueChange} value={this.state.currentValue}/>
@@ -59,6 +61,7 @@ class App extends Component{
           }
         </ul>
       </div>
+      </>
     )
   }
 }
