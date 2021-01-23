@@ -54,11 +54,12 @@ li{
   overflow-wrap: anywhere;
   width: 285px !important;
   color: #5f6a6a;
+  text-align: left;
 }
 
 .item-wrapper{
   display: grid;
-  grid-template-columns: 6fr 1fr;
+  grid-template-columns: 1fr 6fr 1fr;
   padding: 10px;
 }
 
@@ -79,4 +80,12 @@ h1{
   text-align: center;
   color: #5f6a6a;
   margin: 15px 0;
+}
+
+button.checkbox {
+  margin-right: 10px;
+}
+
+.line{
+  text-decoration: line-through;
 }

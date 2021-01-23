@@ -19,14 +19,18 @@ class App extends Component{
   addElem = (e) => {
     e.preventDefault()
     const list = [...this.state.list]
-    if(this.state.currentValue == "") {
+    if(this.state.currentValue === "") {
       return false
     }
-    list.push(this.state.currentValue)
+    const newElem = []
+    newElem.push(this.state.currentValue)
+    newElem.push(false)
+    list.push(newElem)
     this.setState({
       list: list,
       currentValue: ""
     })
+
   }
 
   onDelete = (index) => {
@@ -37,8 +41,19 @@ class App extends Component{
     })
   }
 
+  componentWillMount() {
+
+    const list = localStorage.getItem("list")
+    if(list) {
+      this.setState({
+        list: JSON.parse(list)
+      })
+    }
+
+  }
 
   render() {
+    localStorage.setItem("list", JSON.stringify(this.state.list))
     return(
       <>
       <h1>ToDo List</h1>
@@ -49,14 +64,14 @@ class App extends Component{
         </form>
         <ul>
           {
-            this.state.list.map((item, index) => {
-              return(
-                <div className="item-wrapper" key={index}>
-                  <li>{item}</li>
-                  <button><i onClick={this.onDelete.bind(this, index)} class="fas fa-trash-alt"></i></button>
-                </div>
-              )
-            })
+              this.state.list.map((item, index) => {
+                return(
+                  <div className="item-wrapper" key={index}>
+                    <li key={index}>{item[0]}</li>
+                     <button><i onClick={this.onDelete.bind(this, index)} className="fas fa-trash-alt"></i></button>
+                  </div>
+                )
+              })
   
           }
         </ul>
@@ -65,5 +80,4 @@ class App extends Component{
     )
   }
 }
-
 export default App;
